@@ -1,0 +1,46 @@
+@-moz-document regexp("^(?!.*omnia\\.it).*$") {
+
+
+/*
+ * Mail and messaging
+ */
+[href^="mailto:"]::after {
+  content: "✉️";
+  margin-inline: .75ch;
+}
+[href*='slack.com']:not(:empty)::after {
+  content: '';
+  display: inline-block;
+  position: relative;
+  top: 4px;
+  height: 16px;
+  width: 16px;
+  font-weight: bold;
+  background: url("data:image/svg+xml,%3Csvg width='16px' height='16px' viewBox='0 0 127 127' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M27.2 80c0 7.3-5.9 13.2-13.2 13.2C6.7 93.2.8 87.3.8 80c0-7.3 5.9-13.2 13.2-13.2h13.2V80zm6.6 0c0-7.3 5.9-13.2 13.2-13.2 7.3 0 13.2 5.9 13.2 13.2v33c0 7.3-5.9 13.2-13.2 13.2-7.3 0-13.2-5.9-13.2-13.2V80z' fill='%23E01E5A'%3E%3C/path%3E%3Cpath d='M47 27c-7.3 0-13.2-5.9-13.2-13.2C33.8 6.5 39.7.6 47 .6c7.3 0 13.2 5.9 13.2 13.2V27H47zm0 6.7c7.3 0 13.2 5.9 13.2 13.2 0 7.3-5.9 13.2-13.2 13.2H13.9C6.6 60.1.7 54.2.7 46.9c0-7.3 5.9-13.2 13.2-13.2H47z' fill='%2336C5F0'%3E%3C/path%3E%3Cpath d='M99.9 46.9c0-7.3 5.9-13.2 13.2-13.2 7.3 0 13.2 5.9 13.2 13.2 0 7.3-5.9 13.2-13.2 13.2H99.9V46.9zm-6.6 0c0 7.3-5.9 13.2-13.2 13.2-7.3 0-13.2-5.9-13.2-13.2V13.8C66.9 6.5 72.8.6 80.1.6c7.3 0 13.2 5.9 13.2 13.2v33.1z' fill='%232EB67D'%3E%3C/path%3E%3Cpath d='M80.1 99.8c7.3 0 13.2 5.9 13.2 13.2 0 7.3-5.9 13.2-13.2 13.2-7.3 0-13.2-5.9-13.2-13.2V99.8h13.2zm0-6.6c-7.3 0-13.2-5.9-13.2-13.2 0-7.3 5.9-13.2 13.2-13.2h33.1c7.3 0 13.2 5.9 13.2 13.2 0 7.3-5.9 13.2-13.2 13.2H80.1z' fill='%23ECB22E'%3E%3C/path%3E%3C/svg%3E");
+  margin-inline: .7ch;
+}
+
+/* 
+ * Relative links
+ */
+/*[href*='#'] > *:last-child:not(:empty)::after {
+  content: '#';
+  display: inline-block;
+  position: relative;
+  top: -3px;
+  margin-inline: .7ch;
+  font-size: 0.75em;
+}
+*/
+
+/* 
+ * YouTube
+ */
+[href*='.youtube.com'], [href*='/youtube.com'] {
+  color: red;
+}
+[href*='.youtube.com']::after, [href*='/youtube.com']::after {
+  content: url('https://www.youtube.com/s/desktop/0e9d1cf9/img/favicon.ico');
+  margin-left: 1ch;
+}
+}
